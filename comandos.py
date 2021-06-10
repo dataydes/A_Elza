@@ -40,7 +40,7 @@ caracterers = '[!@:|]\/'
 for char in caracterers:
 		nome = nome.replace(char, "")
 #Montando comando de coleta
-gravador = 'streamlink --hls-live-edge 99999 --hls-segment-threads 5 -o "'+nome+hora+'.mp4" '+arg+' best'
+gravador = 'streamlink --hls-live-edge 99999 --hls-segment-threads 5 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
 
 #Montando tela do shell
 os.system("cls")
