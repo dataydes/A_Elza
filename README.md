@@ -7,3 +7,8 @@ Modo de instalação:
 2 - Dê dois clicks no Elza.py
 3 - insira o link do stream ao vivo e aperte em Gravar (A janela ficará travada e uma segunda janela se abrirá)
 4 - Caso queira cancelar a gravação feche as duas janelas;
+
+
+Para gerar o exe
+pip install cxfreeze
+cxfreeze Elza.py --target-dir Elza
