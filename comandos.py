@@ -5,6 +5,7 @@ import urllib.request #trata a url
 import re
 from urllib import request, parse #biblioteca da url
 from selenium import webdriver #Coleta o nome
+from selenium.webdriver.chrome.options import Options
 from datetime import datetime #define a hora
 import os #comando para o shell
 
@@ -18,10 +19,10 @@ for arg in sys.argv:
 print ("Coletando o nome do vídeo")
 
 #Coleta dados do browser
-options = webdriver.ChromeOptions()
-options.add_argument('headless')
-options.add_argument('window-size=800x600') # optional
-driver = webdriver.Chrome(chrome_options=options)
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('window-size=800x600') # optional
+driver = webdriver.Chrome(options=chrome_options)
 
 #acessando dados
 driver.get(arg)

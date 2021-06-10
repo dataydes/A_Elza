@@ -14,9 +14,9 @@ class Application:
 
         self.quartoContainer = Frame(master)
         self.quartoContainer["pady"] = 20
-        self.quartoContainer.pack()
+        self.quartoContainer.pack(fill=BOTH)
 
-        self.titulo = Label(self.primeiroContainer, text="Elza Youtube")
+        self.titulo = Label(self.primeiroContainer, text="Elza tube")
         self.titulo["font"] = ("Arial", "10", "bold")
         self.titulo.pack()
 
@@ -33,16 +33,27 @@ class Application:
         self.autenticar["font"] = ("Calibri", "8")
         self.autenticar["width"] = 12
         self.autenticar["command"] = self.verificaSenha
-        self.autenticar.pack()
+        self.autenticar.pack(side=TOP)
 
-        self.mensagem = Label(self.quartoContainer, text="", font=self.fontePadrao)
-        self.mensagem.pack()
+        self.bt_sair = Button(self.quartoContainer)
+        self.bt_sair["text"] = "Sair"
+        self.bt_sair["font"] = ("Calibri", "8")
+        self.bt_sair["width"] = 12
+        self.bt_sair["command"] = self.VerificaSair
+        self.bt_sair.pack(side=RIGHT)
 
     #Método chama software
     def verificaSenha(self):
         link = self.nome.get()
-        chamaElza = ("python comandos.py " + link)
-        os.system(chamaElza)        
+        if (link != ""):
+            chamaElza = ("python comandos.py " + link)
+            os.system(chamaElza)
+        else:
+            self.nomeLabel["font"] = ("Calibri","20")
+        return None
+    
+    def VerificaSair(self):
+        exit()
         return None
 
 

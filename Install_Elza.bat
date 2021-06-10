@@ -8,4 +8,5 @@ python -m pip install upgrade pip
 curl https://chromedriver.storage.googleapis.com/91.0.4472.19/chromedriver_win32.zip > chromedriver_win32.zip
 tar -xf chromedriver_win32.zip
 del chromedriver_win32.zip
+cd src
 start streamlink-2.1.2.exe
