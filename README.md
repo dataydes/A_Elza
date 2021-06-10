@@ -1,4 +1,4 @@
-# O Elza
+# A Elza
 Aplicativo criado em python como ferramenta de estudo da linguagem.
 
 Modo de instalação:
