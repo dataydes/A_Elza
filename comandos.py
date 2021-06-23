@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from logging import error
 import sys #coleta o link
 import time #tempo de espera da url
 import urllib.request #trata a url
@@ -30,6 +31,20 @@ site = arg
 time.sleep(3)
 nome = driver.find_element_by_xpath('//*[@id="container"]/h1/yt-formatted-string').text
 print (nome)
+timer = 0
+while (timer != ""):	
+	try:
+		timer = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[19]/div[2]/span[2]/div[1]').text		
+		print (timer)
+	except:
+		try:
+			timer = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[19]/div[2]/span[2]/div[2]').text		
+			print (timer)
+		except:
+			print ("Aula iniciada.")		
+			timer = ""
+	time.sleep(2)
+
 finalizar()
 
 #Definindo hora
@@ -48,7 +63,7 @@ os.system("cls")
 print(" ")
 print(" ")
 print(" ")
-print("             Para encerrar a gravação precione Ctrl + C")
+print("      Para encerrar a gravação precione Ctrl + C")
 print(" ")
 print(" ")
 print(" ")
@@ -56,5 +71,5 @@ print ("Local onde será salvo o vídeo")
 os.system("cd")
 print(" ")
 print(" ")
-print("Gravando")
+print("Gravando em  3...2...1...0")
 os.system(gravador)
