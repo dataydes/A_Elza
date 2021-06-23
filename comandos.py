@@ -41,7 +41,7 @@ while (timer != ""):
 			timer = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[19]/div[2]/span[2]/div[2]').text		
 			print (timer)
 		except:
-			print ("Aula iniciada.")		
+			print ("Aula iniciada...")		
 			timer = ""
 	time.sleep(2)
 
