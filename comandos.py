@@ -4,7 +4,8 @@ import sys #coleta o link
 import time #tempo de espera da url
 import urllib.request #trata a url
 import re
-from urllib import request, parse #biblioteca da url
+from urllib import request, parse
+from warnings import catch_warnings #biblioteca da url
 from selenium import webdriver #Coleta o nome
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime #define a hora
@@ -31,19 +32,6 @@ site = arg
 time.sleep(3)
 nome = driver.find_element_by_xpath('//*[@id="container"]/h1/yt-formatted-string').text
 print (nome)
-timer = 0
-while (timer != ""):	
-	try:
-		timer = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[19]/div[2]/span[2]/div[1]').text		
-		print (timer)
-	except:
-		try:
-			timer = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[19]/div[2]/span[2]/div[2]').text		
-			print (timer)
-		except:
-			print ("Aula iniciada...")		
-			timer = ""
-	time.sleep(2)
 
 finalizar()
 
@@ -56,7 +44,7 @@ caracterers = '[!@:|]\/'
 for char in caracterers:
 		nome = nome.replace(char, "")
 #Montando comando de coleta
-gravador = 'streamlink --hls-live-edge 99999 --hls-segment-threads 5 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
+gravador = 'streamlink --hls-live-restart --retry-streams 2 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
 
 #Montando tela do shell
 os.system("cls")
