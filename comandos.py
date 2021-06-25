@@ -2,8 +2,6 @@
 from logging import error
 import sys #coleta o link
 import time #tempo de espera da url
-import urllib.request #trata a url
-import re
 from urllib import request, parse
 from warnings import catch_warnings #biblioteca da url
 from selenium import webdriver #Coleta o nome
@@ -21,6 +19,7 @@ for arg in sys.argv:
 print ("Coletando o nome do vídeo")
 
 #Coleta dados do browser
+
 chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('window-size=800x600') # optional
@@ -44,6 +43,7 @@ caracterers = '[!@:|]\/'
 for char in caracterers:
 		nome = nome.replace(char, "")
 #Montando comando de coleta
+
 gravador = 'streamlink --hls-live-restart --retry-streams 2 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
 
 #Montando tela do shell
