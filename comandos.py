@@ -27,6 +27,8 @@ driver = webdriver.Chrome(options=chrome_options)
 
 #acessando dados
 driver.get(arg)
+site = arg
+time.sleep(3)
 nome = driver.find_element_by_xpath('//*[@id="container"]/h1/yt-formatted-string').text
 print (nome)
 
