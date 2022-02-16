@@ -2,4 +2,4 @@ src/build
 src/__*
 src/dist
 *.mp4
-chromedriver.exe
+chromedriver*
