@@ -1,7 +1,6 @@
 from win32com.client import Dispatch
 import subprocess 
 from zipfile import ZipFile
-import os
 
 def get_version_via_com(filename):  #Pega a versão do Chorme instalada
     parser = Dispatch("Scripting.FileSystemObject")

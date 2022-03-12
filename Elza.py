@@ -41,6 +41,7 @@ class Application:
         self.bt_sair["width"] = 12
         self.bt_sair["command"] = self.VerificaSair
         self.bt_sair.pack(side=RIGHT)
+        
 
     #Método chama software
     def verificaSenha(self):
@@ -53,8 +54,7 @@ class Application:
         return None
     
     def VerificaSair(self):
-        exit()
-        return None
+        self.destroy()
 
 
 root = Tk()
