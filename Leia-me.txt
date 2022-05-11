@@ -1,4 +1,5 @@
+0 - Instale o python 3 pelo site oficial: https://www.python.org/
 1 - Execute o Install_Elza.bat para atualizar o python as bibliotecas e baixar o driver Chrome e streamlink;
 2 - Dê dois clicks no Elza.exe
 3 - insira o link do stream ao vivo e aperte em Gravar (A janela ficará travada e uma segunda janela se abrirá)
-4 - Caso queira cancelar a gravação feche as duas janelas;
+4 - Caso queira cancelar a gravação feche as duas janelas com o comando Ctrl + c;
