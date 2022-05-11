@@ -24,7 +24,6 @@ print ("Coletando o nome do vídeo")
 options = Options()
 options.add_argument('--headless')
 options.add_argument('window-size=800x600') # optional
-#driver = webdriver.Chrome(options=chrome_options)
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 #acessando dados
 driver.get(arg)
@@ -40,11 +39,12 @@ print("Coletando hora")
 now = datetime.now()
 hora = now.strftime(" %d.%m.%Y - %H.%M")
 
+#Remove caracteres do nome do arquivo.
 caracterers = '[!@:|]\/'
 for char in caracterers:
 		nome = nome.replace(char, "")
-#Montando comando de coleta
 
+#Montando comando de coleta
 gravador = 'streamlink --hls-live-restart --retry-streams 2 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
 
 #Montando tela do shell
