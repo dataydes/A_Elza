@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
+import tkinter as tk
 import os #comando para o shell
 class Application:
     def __init__(self, master=None):
@@ -32,19 +33,19 @@ class Application:
         self.autenticar["text"] = "Gravar"
         self.autenticar["font"] = ("Calibri", "8")
         self.autenticar["width"] = 12
-        self.autenticar["command"] = self.verificaSenha
+        self.autenticar["command"] = self.chamaGravar
         self.autenticar.pack(side=TOP)
 
         self.bt_sair = Button(self.quartoContainer)
         self.bt_sair["text"] = "Sair"
         self.bt_sair["font"] = ("Calibri", "8")
         self.bt_sair["width"] = 12
-        self.bt_sair["command"] = self.VerificaSair
-        self.bt_sair.pack(side=RIGHT)
+        self.bt_sair["command"] = self.chamaSair
+        self.bt_sair.pack(side=RIGHT, padx=20)
         
 
     #Método chama software
-    def verificaSenha(self):
+    def chamaGravar(self):
         link = self.nome.get()
         if (link != ""):
             chamaElza = ("python comandos.py " + link)
@@ -53,10 +54,14 @@ class Application:
             self.nomeLabel["font"] = ("Calibri","20")
         return None
     
-    def VerificaSair(self):
-        self.destroy()
+    def chamaSair(self):
+        root.destroy()
+        return None
 
 
-root = Tk()
+root = tk.Tk()
+root.title("Elza tube")
+#root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='./src/elza.png'))
+root.iconbitmap(default='./src/icon.ico')
 Application(root)
 root.mainloop()

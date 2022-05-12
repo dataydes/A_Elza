@@ -26,11 +26,16 @@ options.add_argument('--headless')
 options.add_argument('window-size=800x600') # optional
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 #acessando dados
-driver.get(arg)
-site = arg
-time.sleep(3)
-nome = driver.find_element_by_xpath('//*[@id="container"]/h1/yt-formatted-string').text
-print (nome)
+try:
+	driver.get(arg)
+	site = arg
+	time.sleep(3)
+	nome = driver.find_element_by_xpath('//*[@id="container"]/h1/yt-formatted-string').text	
+	print (nome)
+except:
+	finalizar()
+	print("Não foi possível encontrar o vídeo, confira o link fornecido.")
+	os._exit()
 
 finalizar()
 
