@@ -34,7 +34,8 @@ try:
 	driver.get(arg)
 	site = arg
 	time.sleep(3)
-	nome = driver.find_element(By.XPATH,'//*[@id="container"]/h1/yt-formatted-string').text
+	#nome = driver.find_element(By.XPATH,'//*[@id="title"]/h1/yt-formatted-string/text()').text
+	nome = driver.title
 	print (nome)
 except:
 	finalizar()
