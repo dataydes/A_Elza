@@ -55,7 +55,7 @@ for char in caracterers:
 		nome = nome.replace(char, "")
 
 #Montando comando de coleta
-gravador = 'streamlink --hls-live-restart --retry-streams 2 -o "'+nome+hora+'.mp4" '+arg+' "720p,best"'
+gravador = 'streamlink --hls-live-restart --retry-streams 2 -o "'+nome+hora+'.mp4" '+arg+' "720p, best"'
 
 #Montando tela do shell
 os.system("cls")

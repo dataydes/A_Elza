@@ -6,5 +6,5 @@ pip install html5lib
 pip install requests
 pip install webdriver-manager
 cd src
-start streamlink5.exe
+start streamlink.exe
 cd ..
